@@ -28,9 +28,9 @@ Fuente: propuesta revisada por la asesoría jurídica (respuestas del 21/10/2026
 - Superintendencia cuya Circular Básica Jurídica aplica
 - Lista de empresas del grupo y de gestores
 
-## Estado de la implementación
+## Plan de implementación
 
-Hecho en esta primera entrega:
+Primera entrega:
 - Formulario público (anónimo / a nombre propio), acuse con código y contraseña.
 - Seguimiento con código y contraseña, buzón bidireccional, aportar información nueva.
 - Panel de gestión: inicio de sesión, lista de casos, detalle, cambio de estado, asignación manual (solo oficial), mensajes, anotaciones.
@@ -39,7 +39,7 @@ Hecho en esta primera entrega:
 - Sin registro de IP ni dispositivo; límite de intentos contra fuerza bruta.
 - Borrado automático diario de datos personales vencidos; se conserva la bitácora.
 
-Siguiente:
+Segunda entrega:
 - Adjuntos con limpieza de metadatos (autor, GPS) y almacenamiento cifrado en Azure Blob Storage.
 - Avisos por correo a gestores y al denunciante a nombre propio (sin contenido de la denuncia).
 - Descarga del expediente (PDF) e informes estadísticos (Excel).
