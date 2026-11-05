@@ -33,6 +33,7 @@ public static class DependenciasInfraestructura
         servicios.AddScoped<AccesoGestorService>();
         servicios.AddScoped<CasosService>();
         servicios.AddScoped<GestoresService>();
+        servicios.AddScoped<PurgaDatosService>();
 
         return servicios;
     }

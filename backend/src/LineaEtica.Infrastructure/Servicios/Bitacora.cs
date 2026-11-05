@@ -30,6 +30,7 @@ public static class AccionesBitacora
     public const string ClaveRestablecida = "Contraseña restablecida";
     public const string TotpRestablecido = "Segundo factor restablecido";
     public const string OficialInicial = "Oficial inicial creado";
+    public const string DatosEliminados = "Datos del caso eliminados por vencimiento";
 }
 
 public static class Bitacora

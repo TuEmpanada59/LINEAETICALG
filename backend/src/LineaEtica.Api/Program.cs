@@ -1,6 +1,7 @@
 using System.Text.Json.Serialization;
 using LineaEtica.Api;
 using LineaEtica.Api.Seguridad;
+using LineaEtica.Api.Tareas;
 using LineaEtica.Domain;
 using LineaEtica.Infrastructure;
 using LineaEtica.Infrastructure.Servicios;
@@ -24,6 +25,9 @@ builder.Services.AddOpenApi();
 builder.Services.AddProblemDetails();
 builder.Services.AddExceptionHandler<ManejadorErrores>();
 builder.Services.AgregarInfraestructura(builder.Configuration);
+builder.Services.AgregarLimitesPorIp(builder.Configuration.GetSection(OpcionesLimites.Seccion).Get<OpcionesLimites>() ?? new());
+builder.Services.AddSingleton(builder.Configuration.GetSection(OpcionesPurga.Seccion).Get<OpcionesPurga>() ?? new());
+builder.Services.AddHostedService<PurgaProgramada>();
 
 builder.Services
     .AddAuthentication()
@@ -110,6 +114,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseRateLimiter();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();

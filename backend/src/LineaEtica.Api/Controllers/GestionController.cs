@@ -4,6 +4,7 @@ using LineaEtica.Infrastructure.Servicios;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace LineaEtica.Api.Controllers;
 
@@ -24,6 +25,7 @@ public sealed record EstadoSesion(string Nombre, string Correo, RolGestor Rol, b
 [Route("api/gestion")]
 public sealed class GestionController(AccesoGestorService acceso) : ControllerBase
 {
+    [EnableRateLimiting(LimitesPorIp.Ingreso)]
     [HttpPost("ingresar")]
     public async Task<IActionResult> Ingresar(IngresoGestor datos, CancellationToken ct)
     {

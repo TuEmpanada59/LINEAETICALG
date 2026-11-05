@@ -4,6 +4,7 @@ using LineaEtica.Infrastructure.Servicios;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace LineaEtica.Api.Controllers;
 
@@ -19,9 +20,11 @@ public sealed class PublicoController(DenunciaService denuncias, SeguimientoServ
     [HttpGet("formulario")]
     public Task<Formulario> Formulario(CancellationToken ct) => denuncias.ObtenerFormulario(ct);
 
+    [EnableRateLimiting(LimitesPorIp.Denuncia)]
     [HttpPost("denuncias")]
     public Task<DenunciaRecibida> Denunciar(NuevaDenuncia datos, CancellationToken ct) => denuncias.Crear(datos, ct);
 
+    [EnableRateLimiting(LimitesPorIp.Ingreso)]
     [HttpPost("seguimiento/ingresar")]
     public async Task<IActionResult> Ingresar(IngresoSeguimiento datos, CancellationToken ct)
     {
