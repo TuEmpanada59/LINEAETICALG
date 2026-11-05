@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Caché de compilación de TypeScript
+*.tsbuildinfo
