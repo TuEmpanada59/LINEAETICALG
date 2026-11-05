@@ -487,3 +487,10 @@ src/LineaEtica.Api/wwwroot/
 *.db-shm
 *.db-wal
 .env
+
+# Configuración local y secretos: nunca al repositorio
+.env.*
+!.env.example
+appsettings.Development.json
+appsettings.*.local.json
+secrets.json

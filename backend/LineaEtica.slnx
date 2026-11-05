@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/LineaEtica.Api/LineaEtica.Api.csproj" />
+    <Project Path="src/LineaEtica.Domain/LineaEtica.Domain.csproj" />
+    <Project Path="src/LineaEtica.Infrastructure/LineaEtica.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/LineaEtica.Tests/LineaEtica.Tests.csproj" />
+  </Folder>
+</Solution>
